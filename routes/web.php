@@ -12,6 +12,7 @@
 */
 
 Auth::routes();
+Route::get('/','HomeController@index');
 Route::get('/home','HomeController@index');
 Route::get('/lista_sucursales/{tipo}','HomeController@list_sucursales');
 

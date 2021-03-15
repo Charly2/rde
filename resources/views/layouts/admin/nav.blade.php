@@ -117,10 +117,15 @@
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                         <!--<div class="dropdown-divider"></div>-->
-                        <a class="dropdown-item" href="{{url('app/login/logout')}}" >
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Salir
-                        </a>
+
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                            {{ csrf_field() }}
+                            <buton type="submit" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item" href="{{url('app/login/logout')}}" >
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Salir
+                            </buton>
+                        </form>
                     </div>
                 </li>
 
