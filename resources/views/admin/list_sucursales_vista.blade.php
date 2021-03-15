@@ -1,12 +1,12 @@
-@extends('layouts.admin',['item_active'=>'evaluaciones'])
+@extends('layouts.admin',['item_active'=>'encuestas'])
 
 @section('content')
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-2 text-gray-800">Lista de encuestas</h1>
-        <form method="get" action="" align="center">
-            <button type="submit" href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Exportar CSV</button>
-        </form>
+
+            <button id="expost" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Exportar CSV</button>
+
     </div>
 
     <!-- Page Heading -->
@@ -94,6 +94,41 @@
                 console.log("{{url('/encuestas/lista_sucursales/'.$id)}}"+'/'+ano+"/"+mes)
                 window.location.href = "{{url('/encuestas/lista_sucursales/'.$id)}}"+'/'+ano+"/"+mes
             });
+
+
+
+            $('#expost').click(function (e) {
+
+                var mes = $('#mes').val();
+                var ano = $('#ano').val();
+
+                fetch("{{url('/encuestas/export/'.$id)}}/"+ano+"/"+mes)
+                    .then(resp => resp.blob())
+                    .then(blob => {
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        // the filename you want
+                        a.download = 'encuestas.csv';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        $('.custom_modal').css({
+                            'width': '0',
+                            'height': '0',
+                            'opacity': '0',
+                        });
+
+                        //alert('your file has downloaded!'); // or you know, something with better UX...
+                    })
+                    .catch(() => alert('oh no!'));
+
+
+            });
+
+
+
 
 
         });

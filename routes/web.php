@@ -13,10 +13,15 @@
 
 Auth::routes();
 Route::get('/home','HomeController@index');
-Route::get('/encuestas/lista_sucursales/','HomeController@list_sucursales');
+Route::get('/lista_sucursales/{tipo}','HomeController@list_sucursales');
+
+Route::get('/encuestas/detalle/{id}','HomeController@encuesta_detalle');
 Route::get('/encuestas/lista_sucursales/{id}','HomeController@encuesta_now');
 Route::get('/encuestas/lista_sucursales/{id}/{year}/{month}','HomeController@encuesta_date');
-Route::get('/encuestas/detalle/{id}','HomeController@encuesta_detalle');
+Route::get('/encuestas/export/{id}/{year}/{month}','HomeController@export');
+
+Route::get('/graficas/lista_sucursales/{id}','HomeController@grafica_now');
+Route::get('/graficas/lista_sucursales/{id}/{year}/{month}','HomeController@grafica_date');
 
 
 Route::group(['prefix' => 'movil'], function() {

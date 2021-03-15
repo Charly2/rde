@@ -1,4 +1,4 @@
-@extends('layouts.admin',['item_active'=>'evaluaciones'])
+@extends('layouts.admin',['item_active'=>$tipo_rest])
 
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -12,7 +12,7 @@
 
         @foreach($sucursales as $item)
             <div class="col-xl-3 col-md-6 mb-4">
-                <a href="{{url('/encuestas/lista_sucursales/'.$item->id)}}">
+                <a href="{{url($tipo_rest.'/lista_sucursales/'.$item->id)}}">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">

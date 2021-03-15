@@ -60,15 +60,15 @@
 
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item {{$item_active=='evaluaciones'?'active':''}}">
-        <a class="nav-link" href="{{url('/encuestas/lista_sucursales')}}">
+    <li class="nav-item {{$item_active=='encuestas'?'active':''}}">
+        <a class="nav-link" href="{{url('/lista_sucursales/encuestas')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Evaluaciones</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{url('app/index/sucursal_gra')}}">
+    <li class="nav-item {{$item_active=='graficas'?'active':''}}">
+        <a class="nav-link" href="{{url('/lista_sucursales/graficas')}}">
             <i class="fas fa-fw fa-chart-bar"></i>
             <span>Gráficas</span></a>
     </li>
