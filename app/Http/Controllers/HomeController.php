@@ -29,6 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        return response()->redirectTo('/lista_sucursales/encuestas');
         //return view('admin.home');
     }
     public function list_sucursales($tipo)
