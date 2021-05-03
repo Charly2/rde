@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Encuesta;
+use App\Mail\EncuestaMail;
 use App\Pregunta;
 use App\Respuesta;
+use App\Sucursal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class IndexMovilController extends Controller
 {
@@ -50,6 +54,14 @@ class IndexMovilController extends Controller
             $respuesta->save();
         }
         $encuesta->save();
+        $sucursalObj = Sucursal::find($sucursal);
+        try {
+            Mail::to([$sucursalObj->correo_gerente,"jborja@drd3d.com","oscar@gmpcp.net"])->send(new EncuestaMail($encuesta->id));
+        } catch (\Exception $e){
+            Log::critical("ERROR ");
+            print_r($e->getMessage());
+            Log::critical($e->getMessage());
+        }
         return response()->json(['estatus'=>1]);
     }
     public function save_comentario($sucursal,Request $request){
@@ -63,6 +75,14 @@ class IndexMovilController extends Controller
             'telefono_contacto' =>$telefono
         ]);
         $encuesta->save();
+        $sucursalObj = Sucursal::find($sucursal);
+        try {
+            Mail::to([$sucursalObj->correo_gerente,"jborja@drd3d.com","oscar@gmpcp.net"])->send(new EncuestaMail($encuesta->id));
+        } catch (\Exception $e){
+            Log::critical("ERROR ");
+            print_r($e->getMessage());
+            Log::critical($e->getMessage());
+        }
         return response()->json(['estatus'=>1]);
     }
 }
