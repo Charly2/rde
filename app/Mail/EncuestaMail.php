@@ -61,6 +61,6 @@ class EncuestaMail extends Mailable
             }
             $data[] = $item;
         }
-        return $this->view('mail.send_encuesta',['encuesta'=>$this->encuesta,'pregustas'=>$data,"sucursal"=>$sucursal_name]);
+        return $this->subject('Nueva Encuesta Realizada!')->view('mail.send_encuesta',['encuesta'=>$this->encuesta,'pregustas'=>$data,"sucursal"=>$sucursal_name]);
     }
 }
