@@ -1,7 +1,12 @@
 @extends("layouts.app")
 
 @section("content")
-
+<style>
+        body{
+            background-image: url("/assets/img/v2/DRD3D_App_Layout12.jpg")!important;
+        }
+        
+    </style>
     <div class="index_header">
         <div class="row">
             <div class="col-sm-6 index_header_img">
