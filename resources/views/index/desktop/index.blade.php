@@ -67,7 +67,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="username">Teléfono del paciente</label>
-                                                <input autocomplete="off"  type="tel" class="form-control input_mobil_finish not_event" id="telefono" aria-describedby="emailHelp"  placeholder="Ingrese su nombre completo">
+                                                <input autocomplete="off"  type="tel" class="form-control input_mobil_finish not_event" id="telefono" aria-describedby="emailHelp"  placeholder="Ingrese su número telefónico">
                                             </div>
                                         </div>
                                     </div>
