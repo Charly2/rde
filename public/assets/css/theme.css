@@ -2342,7 +2342,7 @@ textarea{
     bottom: -50px;
     align-items: center;
     justify-content: flex-end;
-    position: absolute;
+    padding-right: 15px;
 }
 
 #ckckc span.label{

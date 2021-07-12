@@ -3,7 +3,21 @@
 
 <script>
 
+$(document).ready(function(){
+    
+    $('#ckckc').click(function(){
+        t = $(this).children('.checkbox');
+        if (t.hasClass('positive')){
+            t.removeClass('positive');
 
+        } else {
+            t.addClass('positive');
+            t.html('<svg id="i-checkmark" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="10.9375%"><path d="M2 20 L12 28 30 4" /></svg>');
+
+        }
+    });
+
+});
 
 
 
