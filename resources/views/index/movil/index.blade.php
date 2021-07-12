@@ -1,7 +1,12 @@
 @extends("layouts.app")
 
 @section("content")
-
+    <style>
+        body{
+            background-image: url("/assets/img/v2/DRD3D_App_Layout9.jpg")!important;
+        }
+        
+    </style>
     <div id="overlay"></div>
 
     <div class="index_header">
