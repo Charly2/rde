@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="section">
                             @foreach($preguntas as $pregunta)
-                                <div class="slide ">s
+                                <div class="slide ">
                                     @include('preguntas.pregunta_tipo_'.$pregunta->tipo_pregunta,['texto_pregunta'=>$pregunta->texto,'id_pregunta'=>$pregunta->id,'vista'=>'desktop'])
                                 </div>
                             @endforeach
