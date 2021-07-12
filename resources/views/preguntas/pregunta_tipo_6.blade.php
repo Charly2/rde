@@ -21,7 +21,7 @@
                                     <i class="fa fa-check-double"></i>
                                 </span>
                     <span class="app-btn-text">
-                                    <small class="display_block" style="line-height: 1.5"><strong>Siguiente</strong></small>
+                                    <small class="display_block" style="line-height: 1.2">Finalizar<strong  style="line-height: .5em;margin-top: 10px;">Evaluación</strong></small>
                                 </span>
                 </a>
 
