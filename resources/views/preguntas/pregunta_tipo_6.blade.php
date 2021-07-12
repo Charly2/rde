@@ -9,6 +9,10 @@
             <textarea name="" id="_com{{$id_pregunta}}" class="teclado_comnet" cols="30" rows="4"></textarea>
         </div>
     </div>
+    <label class="row" id="ckckc">
+        <span id="" class="checkbox"></span>
+        <span class="label">¿Desea que nos pongamos en <br> contacto de inmediato con usted?</span>
+    </label>
     @if($vista == "desktop")
         @include('libs.teclado',['id'=>"_com"])
     @endif
