@@ -26,7 +26,6 @@ Route::get('/graficas/lista_sucursales/{id}/{year}/{month}','HomeController@graf
 
 
 Route::group(['prefix' => 'movil'], function() {
-    Route::get('/test','TestController@index');
     Route::get('/{sucursal}/', 'IndexMovilController@index')->name('index');
     Route::get('/{sucursal}/gracias', 'IndexMovilController@gracias')->name('index');
     Route::get('{sucursal}/options/{nombre}/{telefono}', 'IndexMovilController@options')->name('options');
@@ -37,7 +36,6 @@ Route::group(['prefix' => 'movil'], function() {
 });
 
 Route::group(['prefix' => 'desktop'], function() {
-    Route::get('/test','TestController@index');
     Route::get('/{sucursal}/', 'IndexDesktopController@index')->name('index');
     Route::get('/{sucursal}/gracias', 'IndexDesktopController@gracias')->name('index');
     Route::get('{sucursal}/options/{nombre}/{telefono}', 'IndexDesktopController@options')->name('options');
