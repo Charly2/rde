@@ -168,7 +168,6 @@
                                     <td width="400" align="center" style="padding-bottom:5px;">
                                         <div class="contentEditableContainer contentTextEditable">
                                             <div class="contentEditable" >
-                                                <p><b>Sucursal:</b> DRD3D COAPA </p>
                                                 <p><b>Nombre:</b> {{$encuesta->nombre_contacto}}</p>
                                                 <p><b>Teléfono:</b> {{$encuesta->telefono_contacto}}</p>
                                                 <p><b>Sucursal:</b> {{$sucursal}}</p>
